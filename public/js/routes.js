@@ -3,12 +3,13 @@
   angular.module('ngWeather')
         .config(RouteConfig);
 
-  RouuteConfig.$inject = ['$routeProvider', '$locationProvider'];
+  RouteConfig.$inject = ['$routeProvider', '$locationProvider'];
 
   function RouteConfig($routeProvider, $locationProvider){
       $routeProvider
       .when('/', {
-        template: 'home'
+        templateUrl: 'html/views/home.html',
+        controller: 'HomeController'
       })
       .when('/hourly', {
         template: 'hourly'
