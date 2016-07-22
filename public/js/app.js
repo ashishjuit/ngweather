@@ -1,3 +1,5 @@
 
 
-angular.module('ngWeather', []);
+angular.module('ngWeather', [
+  'ngRoute'
+]);
