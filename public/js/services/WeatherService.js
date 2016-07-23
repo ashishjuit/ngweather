@@ -25,6 +25,7 @@
             return $http.get(url, config)
                   .then(function(response){
                     service.weather = response.data;
+                    console.log(service.weather);
                 });
     }
 
@@ -35,7 +36,7 @@
                     service.weather = response.data;
                });
     }
-    
+
     function getDailyData(lat, lon){
       var url = baseUrl + 'forecast/daily/' + lat + ',' + lon;
       return $http.get(url, config)
