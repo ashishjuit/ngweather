@@ -3,3 +3,12 @@
 body{
   background-color: lightblue;
 }
+
+.customfont1{
+  font-family: 'Raleway', sans-serif;
+}
+
+.customfont2{
+  font-family: 'Open Sans', sans-serif;
+
+}
