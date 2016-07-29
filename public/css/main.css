@@ -1,5 +1,14 @@
 
 
 body{
-  background-color: lightblue;
+  background-color: #ff4d4d;
+}
+
+.customfont1{
+  font-family: 'Raleway', sans-serif;
+}
+
+.customfont2{
+  font-family: 'Open Sans', sans-serif;
+
 }
