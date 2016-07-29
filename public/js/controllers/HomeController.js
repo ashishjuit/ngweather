@@ -2,22 +2,40 @@
   angular.module('ngWeather')
         .controller('HomeController', HomeController);
 
-  HomeController.$inject = ['$scope', 'WeatherService'];
+  HomeController.$inject = ['$scope', 'WeatherService', 'GeoLocationService'];
 
-  function HomeController($scope, WeatherService){
+  function HomeController($scope, WeatherService, GeoLocationService){
+    console.log(GeoLocationService)
     $scope.updateHourly = updateHourly;
     $scope.updateMinutely = updateMinutely;
     $scope.updateDaily = updateDaily;
-    $scope.latitude = 29;
-    $scope.longitude = -82;
-    function updateHourly(latitude, longitude){
-      WeatherService.getHourlyData(latitude, longitude);
+
+    function updateHourly(location){
+      GeoLocationService.getLocationData(location)
+                       .then(function(locationFromGoogle){
+                         var lat = locationFromGoogle.lat;
+                         var lon = locationFromGoogle.lng;
+                         return WeatherService.getHourlyData(lat,lon);
+                       });
     }
-    function updateMinutely(latitude, longitude){
-      WeatherService.getMinutelyData(latitude, longitude);
+
+    function updateMinutely(location){
+      GeoLocationService.getLocationData(location)
+                       .then(function(locationFromGoogle){
+                         var lat = locationFromGoogle.lat;
+                         var lon = locationFromGoogle.lng;
+                         return WeatherService.getMinutelyData(lat,lon);
+                       });
     }
-    function updateDaily(latitude, longitude){
-      WeatherService.getDailyData(latitude, longitude);
+
+    function updateDaily(location){
+      GeoLocationService.getLocationData(location)
+                       .then(function(locationFromGoogle){
+                         var lat = locationFromGoogle.lat;
+                         var lon = locationFromGoogle.lng;
+                         return WeatherService.getDailyData(lat,lon);
+                       });
     }
+
   }
 })();
