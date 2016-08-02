@@ -1,7 +1,7 @@
 <div class="container">
   <div class= "row">
     <div class = "col-md-8 col-md-offset-2 well text-center">
-      <h3>Latitude: {{minutelyData.latitude}}, Longitude: {{minutelyData.longitude}}</h3>
+      <h3>Latitude: {{minutelyData.latitude | number:2}}, Longitude: {{minutelyData.longitude | number:2}}</h3>
       <h3> Welcome to {{formattedAddress}}</h3>
     </div>
   </div>

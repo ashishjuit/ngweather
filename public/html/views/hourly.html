@@ -2,8 +2,15 @@
 
   <div class= "row">
     <div class = "col-md-8 col-md-offset-2 well text-center">
-      <h3>Latitude: {{hourlyData.latitude}}, Longitude: {{hourlyData.longitude}}</h3>
+      <h3>Latitude: {{hourlyData.latitude | number:2}}, Longitude: {{hourlyData.longitude | number:2}}</h3>
       <h3> Welcome to {{formattedAddress}}</h3>
+    </div>
+  </div>
+
+  <div class= "row card in hourlyData.hourly">
+    <div class = "col-md-6 col-md-offset-3 well text-center">
+      <img ng-src="images/calendar.png">
+      <h4>Summary:{{summary}}</h4>
     </div>
   </div>
 
