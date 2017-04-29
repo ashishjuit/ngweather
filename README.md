@@ -1,2 +1,2 @@
 # ngweather
-This is my project showing the eather of any place on earth.
+This is my project showing the weather of any place on earth.
